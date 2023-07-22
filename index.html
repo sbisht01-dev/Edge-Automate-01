@@ -49,10 +49,13 @@
                     let word = wordsArray[index];
                     const searchURL = `https://www.bing.com/search?q=${word}`;
                     console.log(searchURL);
-                    window.open(searchURL, "_blank");
+                    const newTab = window.open(searchURL, "_blank");
+                    setTimeout(() => {
+                        newTab.close()
+                    }, 100);
                     setTimeout(() => {
                         search(index + 1);
-                    }, 1);
+                    }, 10);
                 }
             }
 
